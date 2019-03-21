@@ -19,11 +19,12 @@ const authKey = "ejymuGS7EotpYTz3FUvTqfub11zKVvIHPgcrljV7396quoIKgKjSse45QTcSGVR
 
 // Instantiate the cosmos client, based on the endpoint and authorization key
 const cosmosClient = new CosmosClientInterface({
-endpoint: endpoint,
-auth: {
-  masterKey: authKey
-},
-consistencyLevel: "Session"
+	useNewUrlParser: true,
+	endpoint: endpoint,
+	auth: {
+	  masterKey: authKey
+	},
+	consistencyLevel: "Session"
 });
 
 
