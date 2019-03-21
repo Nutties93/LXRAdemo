@@ -1,7 +1,7 @@
-var express =require('express');
-var app = express();
-var port=process.env.PORT || 3000;
-var bodyParser = require("body-parser");
+const express =require('express');
+const app = express();
+const port=process.env.PORT || 3000;
+const bodyParser = require("body-parser");
 
 
 
@@ -23,15 +23,14 @@ const cosmosClient = new CosmosClientInterface({
 	endpoint: endpoint,
 	auth: {
 	  masterKey: authKey
-	},
-	consistencyLevel: "Session"
+	}
 });
 
 
 
 //         ------------------ Express Config -----------------------
 app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:false}));
 app.set('view engine', "ejs");
 
 
@@ -63,7 +62,7 @@ app.get('/', async (req, res) => {
 
 	//Retrieve JSON Documents using Query
 	var queryResponse = await container.items.query(
-    "SELECT * FROM c WHERE c.PartitionId=2 ").toArray();
+    	"SELECT * FROM c WHERE c.PartitionId=2 ").toArray();
 	// console.log(queryResponse.result[0]);
 	console.log(queryResponse.result[0].EventProcessedUtcTime);
 
@@ -87,6 +86,9 @@ app.get('/', async (req, res) => {
 // Start the server, listen at port 3000 (-> http://127.0.0.1:3000/)
 // Also print a short info message to the console (visible in
 // the terminal window where you started the node server).
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(port);
+console.log('Server Listening at port'+ port);
+
+
 
 
