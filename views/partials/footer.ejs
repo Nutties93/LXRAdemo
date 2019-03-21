@@ -1,0 +1,540 @@
+            <p class="mt-2 text-center orange">MVP by Orange Business Services</p>
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap,Jquery,Chartjs core JavaScript -->
+    <script src="vendor/chartjs/Chart.js"></script> 
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript"> 
+      function display_c(){
+      var refresh=1000; // Refresh rate in milli seconds
+      mytime=setTimeout('display_ct()',refresh)
+      }
+
+      function display_ct() {
+      var x = new Date()
+      document.getElementById('ct').innerHTML = x;
+      display_c();
+       }
+    </script>
+    <!-- Menu Toggle Script -->
+    <script>
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+
+<!-- Bar Chart 7 -->
+
+    <script>
+      var ctx = document.getElementById('barchart1').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'bar',
+
+          // The data for our dataset
+          data: {
+              labels: ["Crane", "Access", "Truck", "HvyTruck", "Exca1", "Exca2", "Exca3"],
+              datasets: [{
+                  label: "Usage",
+                  backgroundColor: 'rgba(255, 99, 132, 0.8 )',
+                  borderColor: 'rgb(255, 99, 132)',
+                  data: [0, 10, 5, 2, 20, 30, 45],
+                }]
+          },
+
+          // Configuration options go here
+          options: {
+              maintainAspectRatio: false,
+              title: {
+                text: ["Chart Title","Short Description here!"],
+                display:true,
+                position: "bottom",
+                fontSize: 12,
+                fontColor: '#0fffff',
+                fontStyle: 'normal',
+                padding: 3,
+                lineHeight:1.2
+              },
+              legend: {
+                display: false,
+              },  
+              scales: {
+                  xAxes: [{
+                      // scaleLabel: {
+                      //   fontSyle: 'normal',
+                      //   fontSize: 5,
+                      // },
+                      ticks: {
+                          display: true, //this will remove only the label
+                          fontSize: 7
+                      },
+                  }]
+              }
+          }
+      });
+    </script>  
+
+<!-- Chart 5  PIE CHART-->
+    <script>
+      var ctx = document.getElementById('piechart').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'doughnut',
+
+          // The data for our dataset
+          data: {
+              labels: ["January", "February", "March", "April", "May", "June", "July"],
+              datasets: [{
+                  label: "My sales",
+                  backgroundColor: ["rgba(255, 99, 132, 0.8","blue","orange","red","teal","green","yellow"],
+                  borderColor: 'white',
+                  borderWidth: 1,
+                  hoverBackgroundColor: "black",
+                  hoverBorderWidth: 3,
+                  data: [0, 10, 5, 2, 20, 30, 45],
+              }]
+          },
+
+          // Configuration options go here
+          options: {
+              cutoutPercentage: 60,
+              rotation: 3.15,    //25% - 6.28, 50% - 1.57, 75% - 3.14, 100% - 4.71
+              circumference: 6.284, 
+              maintainAspectRatio: false,
+              animation: {
+                animateRotate: true,
+                animateScale: true,
+              },
+              title: {
+                text: ["Chart Title","Short Description here!"],
+                display:true,
+                position: "bottom",
+                fontSize: 10,
+                fontColor: '#0fffff',
+                fontStyle: 'normal',
+                padding: 5,
+                lineHeight:1.2
+
+              },
+              legend: {
+                display: false,
+              },  
+          }
+      });
+    </script>  
+
+<!-- Chart 6  PIE CHART2-->
+    <script>
+      var ctx = document.getElementById('piechart2').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'doughnut',
+
+          // The data for our dataset
+          data: {
+              labels: ["January", "February", "March", "April", "May", "June", "July"],
+              datasets: [{
+                  label: "My sales",
+                  backgroundColor: ["rgba(255, 99, 132, 0.8","blue","orange","red","teal","green","yellow"],
+                  borderColor: 'white',
+                  borderWidth: 1,
+                  hoverBackgroundColor: "black",
+                  hoverBorderWidth: 3,
+                  data: [0, 10, 5, 2, 20, 30, 45],
+              }]
+          },
+
+          // Configuration options go here
+          options: {
+              cutoutPercentage: 60,
+              rotation: 1.57,    //25% - 6.28, 50% - 1.57, 75% - 3.14, 100% - 4.71
+              circumference: 6.284, 
+              maintainAspectRatio: false,
+              animation: {
+                animateRotate: true,
+                animateScale: true,
+              },
+              title: {
+                text: ["Chart Title","Short Description here!"],
+                display:true,
+                position: "bottom",
+                fontSize: 10,
+                fontColor: '#0fffff',
+                fontStyle: 'normal',
+                padding: 5,
+                lineHeight:1.2
+
+              },
+              legend: {
+                display: false,
+              },  
+          }
+      });
+    </script>  
+
+    <!-- Chart for MYCHART -->
+    <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'bar',
+
+          // The data for our dataset
+          data: {
+              labels: ["January", "February", "March", "April", "May", "June", "July"],
+              datasets: [{
+                  label: "My sales",
+                  backgroundColor: 'rgba(255, 99, 132, 0.8 )',
+                  borderColor: 'rgb(255, 99, 132)',
+                  data: [0, 10, 5, 2, 20, 30, 45],
+                },{
+                  label: "My profits",
+                  backgroundColor: 'rgba(0, 99, 132,0.5)',
+                  borderColor: 'rgb(0, 99, 132)',
+                  borderDash: [10,5,3,2,5,7],
+                  data: [5, 15, 5, 2, 22, 33, 49],
+                  fill: false,
+                  type:"line",
+              }]
+          },
+
+          // Configuration options go here
+          options: {
+              maintainAspectRatio: false,
+              title: {
+                text: ["Chart Title","Short Description here!"],
+                display:true,
+                position: "bottom",
+                fontSize: 12,
+                fontColor: '#0fffff',
+                fontStyle: 'normal',
+                padding: 1,
+                lineHeight:1
+              },
+              legend: {
+                display: false,
+              },  
+              scales: {
+                  xAxes: [{
+                      // scaleLabel: {
+                      //   fontSyle: 'normal',
+                      //   fontSize: 5,
+                      // },
+                      ticks: {
+                          display: true, //this will remove only the label
+                          fontSize: 7
+                      },
+                  }]
+              }
+          }
+      });
+    </script>  
+    <!-- Mychart 2 -->
+    <script>
+      var ctx = document.getElementById('myChart1').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'bar',
+
+          // The data for our dataset
+          data: {
+              labels: ["January", "February", "March", "April", "May", "June", "July"],
+              datasets: [{
+                  label: "My sales",
+                  backgroundColor: 'rgba(255, 99, 132, 0.8 )',
+                  borderColor: 'rgb(255, 99, 132)',
+                  data: [0, 10, 5, 2, 20, 30, 45],
+                },{
+                  label: "My profits",
+                  backgroundColor: 'rgba(0, 99, 132, 0.8)',
+                  borderColor: 'rgb(0, 99, 132)',
+                  borderDash: [10,5,3,2,5,7],
+                  borderCapStyle: "butt",
+                  cubicInterpolationMode: "monotone",
+                  fill:"start",
+                  lineTension: 0.4,
+                  data: [5, 15, 5, 2, 22, 33, 49],
+              }]
+          },
+
+          // Configuration options go here
+          options: {
+              maintainAspectRatio: false,
+              title: {
+                text: ["Chart Title","Short Description here!"],
+                display:true,
+                position: "bottom",
+                fontSize: 12,
+                fontColor: '#0fffff',
+                fontStyle: 'normal',
+                padding: 1,
+                lineHeight:1
+              },
+              legend: {
+                display: false,
+              },  
+              scales: {
+                  xAxes: [{
+                      // scaleLabel: {
+                      //   fontSyle: 'normal',
+                      //   fontSize: 5,
+                      // },
+                      ticks: {
+                          display: true, //this will remove only the label
+                          fontSize: 7
+                      },
+                  }]
+              }
+          }
+      });
+    </script>  
+
+    <!-- my chart 3 -->
+    <script>
+      var ctx = document.getElementById('myChart2').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'line',
+
+          // The data for our dataset
+          data: {
+              labels: ["January", "February", "March", "April", "May", "June", "July"],
+              datasets: [{
+                  label: "My sales",
+                  backgroundColor: 'rgba(255, 99, 132, 0.2 )',
+                  borderColor: 'rgb(255, 99, 132)',
+                  data: [0, 10, 5, 2, 20, 30, 45],
+                },{
+                  label: "My profits",
+                  backgroundColor: 'rgba(0, 99, 132, 0.2)',
+                  borderColor: 'rgb(0, 99, 132)',
+                  borderDash: [10,5,3,2,5,7],
+                  borderCapStyle: "butt",
+                  cubicInterpolationMode: "monotone",
+                  fill:"start",
+                  lineTension: 0.4,
+                  data: [5, 15, 5, 2, 22, 33, 49],
+              }]
+          },
+
+          // Configuration options go here
+          options: {
+              maintainAspectRatio: false,
+              title: {
+                text: ["Chart Title","Short Description here!"],
+                display:true,
+                position: "bottom",
+                fontSize: 12,
+                fontColor: '#0fffff',
+                fontStyle: 'normal',
+                padding: 1,
+                lineHeight:1
+              },
+              legend: {
+                display: false,
+              },  
+              scales: {
+                  xAxes: [{
+                      // scaleLabel: {
+                      //   fontSyle: 'normal',
+                      //   fontSize: 5,
+                      // },
+                      ticks: {
+                          display: true, //this will remove only the label
+                          fontSize: 7
+                      },
+                  }]
+              }
+          }
+      });
+    </script>  
+
+<!-- Chart 4 MIXED  LARGE-->
+    <script>
+      var ctx = document.getElementById('myChart3').getContext('2d');
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'bar',
+
+          // The data for our dataset 
+          data: {
+              labels: ["January", "February", "March", "April", "May", "June", "July"],
+              datasets: [{
+                  label: "Sales",
+                  backgroundColor: 'rgba(255, 99, 132, 0.8 )',
+                  borderColor: 'rgb(255, 99, 132)',
+                  data: [50,12,54,63,77,23,55]
+                },{
+                  label: "Profits",
+                  backgroundColor: 'rgba(0, 99, 132,0.5)',
+                  borderColor: 'rgb(0, 99, 132)',
+                  borderDash: [10,5,3,2,5,7],
+                  data: [5, 15, 5, 2, 22, 33, 49],
+                  fill: false,
+                  type:"line",
+              },
+              {
+                  label: "Target",
+                  backgroundColor: 'rgba(86, 15, 65, 0.5)',
+                  borderColor: 'rgb(102, 99, 132)',
+                  // borderDash: [10,5,3,2,5,7],
+                  data: [8, 22, 8, 6, 48, 44, 80],
+                  fill: false,
+                  type:"line",
+              }]
+          },
+
+          // Configuration options go here 
+          options: {
+              maintainAspectRatio: false,
+              title: {
+                text: ["Chart Title"],
+                display:true,
+                position: "bottom",
+                fontSize: 12,
+                fontColor: '#0fffff',
+                fontStyle: 'normal',
+                padding: 15,
+                lineHeight:1
+
+              },
+              legend: {
+                display: true,
+                position: "right",
+                onClick: alertBox,
+                labels:{
+                  boxWidth : 30,    //default is 40
+                  fontSize: 14,     //12
+                  padding: 8 ,      // 10
+                  fontColor: "white"
+                }
+              },  
+              scales: {
+                  xAxes: [{
+                      // scaleLabel: {
+                      //   fontSyle: 'normal',
+                      //   fontSize: 5,
+                      // },
+                      ticks: {
+                          display: true, //this will remove only the label
+                          fontSize: 10
+                      },
+                  }]
+              }
+          }
+      });
+      function alertBox(){
+        alert("this is legend");
+      };
+    </script>  
+
+  <!-- GAUGE CHART -->
+  <script>
+    var ctx = document.getElementsByClassName("chartjs-gauge");
+    var chart = new Chart(ctx, {
+        type:"doughnut",
+        data: {
+            labels : ["Red","Blue"],
+            datasets: [{
+                label: "Gauge",
+                data : [10, 190],
+                backgroundColor: [
+                    "rgb(255, 99, 132)",
+                    "rgb(54, 162, 235)",
+                    "rgb(255, 205, 86)"
+                ]
+            }]
+        },
+        options: {
+            circumference: Math.PI,
+            rotation : Math.PI,
+            cutoutPercentage : 80, // precent
+            plugins: {
+                datalabels: {
+                  backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                  borderColor: '#ffffff',
+                  color: function(context) {
+                    return context.dataset.backgroundColor;
+                  },
+                  font: function(context) {
+                    var w = context.chart.width;
+                    return {
+                      size: w < 512 ? 18 : 20
+                    }
+                  },
+                  align: 'start',
+                  anchor: 'start',
+                  offset: 10,
+                  borderRadius: 4,
+                  borderWidth: 1,
+                  formatter: function(value, context) {
+                    var i = context.dataIndex;
+                    var len = context.dataset.data.length - 1;
+                    if(i == len){
+                      return null;
+                    }
+                    return value + ' mph';
+                  }
+                }
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                enabled: false
+            }
+        }
+    });
+
+
+    // DEMO Code: not relevant to example
+    function change_gauge(chart, label, data){
+      chart.data.datasets.forEach((dataset) => {
+        if(dataset.label == label){
+          dataset.data = data;
+        }  
+      });
+      chart.update();
+    }
+
+    var accelerating = false;
+    function accelerate(){
+      accelerating = false;
+      window.setTimeout(function(){
+          change_gauge(chart,"Gauge",[20,140])
+      }, 1000);
+
+      window.setTimeout(function(){
+          change_gauge(chart,"Gauge",[60,140])
+      }, 2000);
+
+      window.setTimeout(function(){
+          change_gauge(chart,"Gauge",[100,100])
+      }, 3000);
+
+      window.setTimeout(function(){
+          change_gauge(chart,"Gauge",[180,20])
+      }, 4000);
+
+      window.setTimeout(function(){
+          change_gauge(chart,"Gauge",[200,0])
+      }, 5000);
+    }
+
+    // Start sequence
+    accelerate();
+    window.setInterval(function(){
+      if(!accelerating){
+        acelerating = true;
+        accelerate();
+      }
+    }, 6000);
+  </script>
+
+  </body>
+</html>

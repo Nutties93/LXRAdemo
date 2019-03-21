@@ -1,0 +1,275 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+body {
+/*  overflow-x: hidden;*/
+  background: #343a40; 
+}
+p{
+  color:white;
+  font-size: 1rem;
+}
+
+h6{
+  font-size: 2rem;
+}
+#headers{
+  color: #00ffff;
+  text-shadow: 0.05px 0.05px white;
+  font-size: 0.9rem;
+}
+
+
+.navbar-nav > li > a, .navbar-brand {
+    padding: 0.2rem 0.8rem !important; 
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+.navbar {min-height:3rem ;}
+
+.navbar-text{ padding: 0rem 0.8rem; font-size: 0.8rem; }
+
+#ct {position: absolute; right: 0px;}
+
+#orangebg{
+    background: #ff9966;
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 0rem;
+}
+
+
+.orange{
+  color: #ff9966;
+
+}
+
+.teal{
+  color: #00ffff;
+  font-size: 1rem;
+}
+
+
+.white{
+  color:white;
+}
+
+.units{
+  text-align: right;
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+}
+
+
+/*BORDER COLORS!!*/
+.border{
+  border: 0px !important;
+}
+
+.border-panels{
+  border-color: white !important;
+  border-width: 0.02rem !important;
+}
+
+/* Float 3 columns side by side */
+.column2 {
+  float: left;
+  width: 33%;
+  height: 87%;
+}
+
+.column1 {
+  float: left;
+  width: 50%;
+  height: 77%;
+  padding: 0.2rem 0.2rem;
+}
+
+/* GAUGE CHART*/
+.chartjs-wrapper {
+  margin: 10px 20px;
+  width: 80%;
+  height: 100%;
+}
+
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+#sidebar-wrapper .list-group {
+  width: 10rem;
+}
+
+#sidebar-wrapper .list-group .list-group-item {
+  color: white;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: -10rem;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0rem;
+  }
+}
+
+
+
+/* FLip Card */
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  height: 100%; 
+  /*perspective: 1000px;  Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+/*.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}*/
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+/*  background-color: #343a40;*/
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+/*  background-color: dodgerblue;*/
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+
+/*flip card on clicked*/
+
+
+/*                          <label>
+                          <input type="checkbox"  />
+                            <div class="card">                        
+                                <div class="front">                      
+                                  <canvas id="myChart"></canvas>
+                                </div>
+                                <div class="back"> 
+                                  <p> Link to Azure </p> 
+                                </div>
+                          </div>   
+                        </label>*/
+label {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    border: none;
+}
+
+.card {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+/*    z-index: 20;*/
+}
+
+    .card div {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #343a40;
+        text-align: center;
+        line-height: 200px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        /*border-radius: 2px;*/
+    }
+
+    .card .back {
+        background: #343a40;
+        color: #FFF;
+        -webkit-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+    }
+
+label:hover .card {
+/*    -webkit-transform: rotateX(20deg);*/
+/*    transform: rotateX(20deg);*/
+    box-shadow: 0 5px 5px rgba(255,225,225,.4);
+}
+
+input {
+    display: none;
+}
+
+:checked + .card {
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+}
+
+label:hover :checked + .card {
+/*    transform: rotateX(160deg);
+    -webkit-transform: rotateX(160deg);*/
+    box-shadow: 0 5px 5px rgba(255,225,225,.4);
+}

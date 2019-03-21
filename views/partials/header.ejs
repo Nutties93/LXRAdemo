@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- AUTO REFRESH -->
+<!--   <meta http-equiv="refresh" content="5"> -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title> LXRA DASHBOARD DEMO</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="screen">
+
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" type="text/css" rel="stylesheet" media="screen">
+  <link href="fontawesome-free-5.7.2-web/css/all.css" type="text/css" rel="stylesheet" media="screen">
+
+  <script type = "text/JavaScript">
+     <!--
+        function AutoRefresh( t ) {
+           setTimeout("location.reload(true);", t);
+        }
+     //-->
+  </script>
+
+</head>
+
+<body onload="display_ct(); JavaScript:AutoRefresh(30000);">
+  <div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-dark border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"> Dashboards </div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-dark">Main</a>
+        <a href="1" class="list-group-item list-group-item-action bg-dark">Safety</a>
+        <a href="2" class="list-group-item list-group-item-action bg-dark">Events</a>
+        <a href="3" class="list-group-item list-group-item-action bg-dark">Alerts</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+        <button class="btn btn-dark" id="menu-toggle"><span class="navbar-toggler-icon"></span></button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+        </button>
+        <img src="https://www.stonnington.vic.gov.au/files/assets/public/development/burke-level-crossing.png" style="width:3rem;height:3rem;margin: 0rem 0.5rem;">
+        <span class="navbar-text">
+             LXRP - Level Crossing Removal Project - Main Dashboard 
+              <!-- Display time -->
+              <span class="mr-4" id='ct' ></span>
+        </span>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-user" style="font-size: 1rem;"></i></a>
+            </li>
+<!--             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+      </nav>
